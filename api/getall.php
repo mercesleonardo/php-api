@@ -13,7 +13,6 @@ if($method === 'get') {
             $array['result'][] = [
                 'id' => $item['id'],
                 'title' => $item['title'],
-                'body' => $item['body']
             ];
         }
     }
