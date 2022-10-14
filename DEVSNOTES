@@ -18,4 +18,4 @@ Quais os endpoints?
 - (GET) /api/note/123
 - (POST) /api/note (title, body)
 - (PUT) /api/note/123 (title, body)
-- (DELETE) /api/note/123
+- (DELETE) /api/note/123.
