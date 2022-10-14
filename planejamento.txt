@@ -14,8 +14,8 @@ Qual a estrutura de dados?
 -- body
 
 Quais os endpoints?
-- (GET) /api/notes
-- (GET) /api/note/123
-- (POST) /api/note (title, body)
-- (PUT) /api/note/123 (title, body)
-- (DELETE) /api/note/123.
+- (GET) /api/notes - /api/getall.php
+- (GET) /api/note/123 - /api/get.php?id=123
+- (POST) /api/note (title, body) - /api/insert.php (title, body)
+- (PUT) /api/note/123 (title, body) - /api/update.php (id, title,body)
+- (DELETE) /api/note/123 - /api/delete.php (id)
