@@ -3,8 +3,6 @@ require('../config.php');
 
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
-
-
 if($method === 'put') {
 
     parse_str(file_get_contents('php://input'), $input);
@@ -19,12 +17,13 @@ if($method === 'put') {
 
     if($id && $title && $body) {
 
-        $sql =$pdo->prepare("SELECT * FROM notes WHERE id = :id");
+        $sql = $pdo->prepare("SELECT * FROM notes WHERE id = :id");
         $sql->bindValue(':id', $id);
         $sql->execute();
 
-        if($$sql->rowCount() > 0) {
-            $sql = $pdo->prepare("UPDATE notes SET title =:title, body =:body WHERE id = :id");
+        if($sql->rowCount() > 0) {
+
+            $sql = $pdo->prepare("UPDATE notes SET title = :title, body = :body WHERE id = :id");
             $sql->bindValue(':id', $id);
             $sql->bindValue(':title', $title);
             $sql->bindValue(':body', $body);
@@ -45,7 +44,7 @@ if($method === 'put') {
     }
 
 } else {
-    $array['error'] = 'Método não permitido (apenas Put)';
+    $array['error'] = 'Método não permitido (apenas PUT)';
 }
 
 require('../return.php');

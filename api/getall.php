@@ -9,16 +9,16 @@ if($method === 'get') {
     if($sql->rowCount() > 0) {
         $data = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($data as $item) {
+        foreach($data as $item) {
             $array['result'][] = [
                 'id' => $item['id'],
-                'title' => $item['title'],
+                'title' => $item['title']
             ];
         }
     }
 
 } else {
-    $array['error'] = 'Método não permitido (apenas Get)';
+    $array['error'] = 'Método não permitido (apenas GET)';
 }
 
 require('../return.php');

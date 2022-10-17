@@ -3,8 +3,6 @@ require('../config.php');
 
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
-
-
 if($method === 'post') {
 
     $title = filter_input(INPUT_POST, 'title');
@@ -30,7 +28,7 @@ if($method === 'post') {
     }
 
 } else {
-    $array['error'] = 'Método não permitido (apenas Post)';
+    $array['error'] = 'Método não permitido (apenas POST)';
 }
 
 require('../return.php');
